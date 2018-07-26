@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rockinggoose671</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script>
+      var x = 100;
+      var y = 100;
+      var isDoubleClicked = false;
+    	function setup() {
+    		createCanvas(800,500);
+    	}
+    	function draw() {
+        noStroke();
+        fill("pink")
+        stroke("purple")
+        if (isDoubleClicked === true) {
+          rect(x, y, 100,50)
+        }
+        else {
+          ellipse(x,y,50,50)
+      }
+    	}
+      function mouseDragged() {
+        isDoubleClicked = false; 
+        x = mouseX
+        y = mouseY
+      }
+      function touchMoved() {
+        x = mouseX
+        y = mouseY
+      }
+      function doubleClikced() {
+        isDoubleClicked = true;
+        x = mouseX
+        y = mouseY
+      }
+    </script>
+  </body>
+</html>
