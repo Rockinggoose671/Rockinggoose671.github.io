@@ -8,24 +8,37 @@
     <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <script>
-      var x = 100;
-      var y = 100;
+    <div>
+
+      <button onclick="changeColor"('black'); value="black">black</button>
+      <button onclick="changeColor"('red'); value="red">red</button>
+      <button onclick="changeColor"('blue'); value="blue">blue</button>
+      <button onclick="changeColor"('white/erase'); value="white/erase">erase</button>
+    </div>
+<script>
+      var x;
+      var y;
+      var color = "black";
       var isDoubleClicked = false;
     	function setup() {
     		createCanvas(800,500);
+        frameRate(300);
     	}
     	function draw() {
         noStroke();
-        fill("pink")
-        stroke("purple")
+        fill(color)
+        stroke(color)
         if (isDoubleClicked === true) {
           rect(x, y, 100,50)
         }
+
         else {
           ellipse(x,y,50,50)
       }
     	}
+      function changeColor(newColor) {
+        color = newColor;
+      }
       function mouseDragged() {
         isDoubleClicked = false; 
         x = mouseX
